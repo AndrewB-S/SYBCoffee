@@ -1,0 +1,55 @@
+---
+import coffeeGif from "/coffee.gif";
+const navItems = ["Home", "About", "Menu", "Contact"];
+const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
+---
+
+<nav class="navbar bg-royal items-stretch p-0">
+  <div class="flex-1 py-2 pl-2">
+    <img src={coffeeGif} alt="" class="max-h-6" />
+    <a class="btn btn-ghost normal-case text-xl text-offwhite px-2">
+      SYB Coffee</a
+    >
+  </div>
+  <div class="flex-none md:hidden">
+    <label
+      id="toggle-button"
+      for="toggle-menu"
+      class="btn btn-square btn-ghost drawer-button z-10"
+    >
+      <div id="menu-button" class="hamburger-menu flex flex-col gap-1">
+        <div class={baseLineStyling}></div>
+        <div class={baseLineStyling}></div>
+        <div class={baseLineStyling}></div>
+      </div>
+    </label>
+  </div>
+  <ul class="hidden md:flex gap-2 items-stretch">
+    {
+      navItems.map((el) => (
+        <li class="hover:bg-slate flex flex-col justify-center px-2 text-offwhite hover:text-royal rounded">
+          <a>{el}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .open div div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open div div:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  .open div div:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
+</style>
+<script>
+  let menu = document.getElementById("toggle-button");
+  menu?.addEventListener("click", () => {
+    menu?.classList.toggle("open");
+  });
+</script>

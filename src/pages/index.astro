@@ -1,12 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/InteractiveNav";
+import Nav from "../components/InteractiveNav.astro";
 ---
 
 <Layout title="SYB Coffee | Woodstock">
-  <Nav client:load />
-  <main>
-    <h1 class="text-blue">Welcome to My Website</h1>
+  <Nav />
+  <main class="hero" style="background-image: url('/coffee-art.gif')">
+    <div class="hero-overlay"></div>
+    <div
+      class="hero-content text-center text-neutral-focus flex flex-col py-20"
+    >
+      <div id="logo-button" class="relative">
+        <div
+          id="logo-background"
+          class="absolute bg-royal h-full w-full opacity-75 rounded-lg"
+        >
+        </div>
+        <img src="" alt="" />
+        <h1
+          class="text-orangered drop-shadow-2xl text-5xl font-bold py-4 tracking-wide border-4 rounded-lg p-4 border-orangered select-none"
+        >
+          SYB Coffee
+        </h1>
+      </div>
+      <p class="text-xl text-offwhite tracking-widest">
+        Premium, freshly-made drinks for events of all kinds.
+      </p>
+    </div>
   </main>
   <div class="bg-orangered">orangered</div>
   <div class="bg-royal">royal</div>
@@ -14,3 +34,23 @@ import Nav from "../components/InteractiveNav";
   <div class="bg-slate">slate</div>
   <div class="bg-offwhite">offwhite</div>
 </Layout>
+<script>
+  const logo = document.getElementById("logo-button");
+  const bg = document.getElementById("logo-background");
+
+  let logoColors = ["bg-royal", "bg-concrete", "bg-slate", "bg-offwhite"];
+
+  let counter = 0;
+
+  logo?.addEventListener("click", () => {
+    if (counter === logoColors.length - 1) {
+      bg?.classList.remove(logoColors[counter]);
+      bg?.classList.add(logoColors[0]);
+      counter = 0;
+    } else {
+      bg?.classList.remove(logoColors[counter]);
+      counter++;
+      bg?.classList.add(logoColors[counter]);
+    }
+  });
+</script>

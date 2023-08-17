@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const navItems = ["Home", "About", "Menu", "Contact"];
 ---
 
 <!DOCTYPE html>
@@ -16,18 +17,26 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+
+  <!--BODY - Includes sidebar drawer from DaisyUI-->
   <body class="bg-concrete drawer drawer-end">
     <input id="toggle-menu" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
+      <!-- Content -->
       <slot />
     </div>
-    <div class="drawer-side">
-      <label class="drawer-overlay"></label>
+
+    <!-- Sidebar Nav Content -->
+    <div class="drawer-side md:hidden">
+      <label for="toggle-menu" class="drawer-overlay"></label>
       <ul class="menu w-80 h-full bg-royal text-lg">
-        <li><a class="text-end">Home</a></li>
-        <li><a>About</a></li>
-        <li><a>Menu</a></li>
-        <li><a>Contact</a></li>
+        {
+          navItems.map((el) => (
+            <li>
+              <a class="hover:text-orangered text-offwhite text-2xl">{el}</a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </body>
@@ -40,3 +49,11 @@ const { title } = Astro.props;
   code {
   }
 </style>
+
+<script>
+  const overlay = document.querySelector(".drawer-overlay");
+  const menuButton = document.getElementById("toggle-button");
+  overlay?.addEventListener("click", () => {
+    menuButton?.classList.toggle("open");
+  });
+</script>
