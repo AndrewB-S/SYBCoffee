@@ -4,13 +4,18 @@ const navItems = ["Home", "About", "Menu", "Contact"];
 const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
 ---
 
-<nav class="navbar bg-royal items-stretch p-0">
+<nav class="navbar bg-royal items-stretch p-0 relative">
   <div class="flex-1 py-2 pl-2">
     <img src={coffeeGif} alt="" class="max-h-6" />
-    <a class="btn btn-ghost normal-case text-xl text-offwhite px-2">
-      SYB Coffee</a
+    <a class="btn btn-ghost normal-case text-3xl text-orangered px-2">
+      SYB <img
+        src="/willsCartoonDog.png"
+        alt=""
+        class="w-6 -ml-2 -mr-2 inline-block"
+      /> Coffee</a
     >
   </div>
+
   <div class="flex-none md:hidden">
     <label
       id="toggle-button"
@@ -27,7 +32,7 @@ const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
   <ul class="hidden md:flex gap-2 items-stretch">
     {
       navItems.map((el) => (
-        <li class="hover:bg-slate flex flex-col justify-center px-2 text-offwhite hover:text-royal rounded">
+        <li class="hover:bg-slate flex flex-col justify-center px-2 text-offwhite hover:text-orangered hover:font-bold hover:text-xl rounded">
           <a>{el}</a>
         </li>
       ))

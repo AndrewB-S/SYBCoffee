@@ -1,33 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/InteractiveNav.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="SYB Coffee | Woodstock">
   <Nav />
-  <main class="hero" style="background-image: url('/coffee-art.gif')">
-    <div class="hero-overlay"></div>
-    <div
-      class="hero-content text-center text-neutral-focus flex flex-col py-20"
-    >
-      <div id="logo-button" class="relative">
-        <div
-          id="logo-background"
-          class="absolute bg-royal h-full w-full opacity-75 rounded-lg"
-        >
-        </div>
-        <img src="" alt="" />
-        <h1
-          class="text-orangered drop-shadow-2xl text-5xl font-bold py-4 tracking-wide border-4 rounded-lg p-4 border-orangered select-none"
-        >
-          SYB Coffee
-        </h1>
-      </div>
-      <p class="text-xl text-offwhite tracking-widest">
-        Premium, freshly-made drinks for events of all kinds.
-      </p>
-    </div>
-  </main>
+  <Hero />
   <div class="bg-orangered">orangered</div>
   <div class="bg-royal">royal</div>
   <div class="bg-concrete">concrete</div>
@@ -35,13 +14,12 @@ import Nav from "../components/InteractiveNav.astro";
   <div class="bg-offwhite">offwhite</div>
 </Layout>
 <script>
+  //Script for the toggling of the logo color.
   const logo = document.getElementById("logo-button");
   const bg = document.getElementById("logo-background");
 
   let logoColors = ["bg-royal", "bg-concrete", "bg-slate", "bg-offwhite"];
-
   let counter = 0;
-
   logo?.addEventListener("click", () => {
     if (counter === logoColors.length - 1) {
       bg?.classList.remove(logoColors[counter]);
