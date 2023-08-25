@@ -15,8 +15,8 @@ export default defineConfig({
           branch: "main",
         },
 
-        media_folder: "public/assets/drinkImages",
-        public_folder: "assets/drinkImages",
+        media_folder: "public/images",
+        public_folder: "assets/",
         collections: [
           {
             name: "drinks",
