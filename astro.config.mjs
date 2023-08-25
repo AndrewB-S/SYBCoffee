@@ -29,6 +29,23 @@ export default defineConfig({
               { name: "body", widget: "markdown", label: "Drink Description" },
             ],
           },
+          {
+            name: "blog",
+            label: "Blog Posts",
+            folder: "src/content/blog",
+            create: true,
+            delete: true,
+            fields: [
+              { name: "title", widget: "string", label: "Post Title" },
+              {
+                name: "image",
+                widget: "image",
+                label: "Blog Post Image",
+                required: false,
+              },
+              { name: "body", widget: "markdown", label: "Post Content" },
+            ],
+          },
         ],
       },
     }),
