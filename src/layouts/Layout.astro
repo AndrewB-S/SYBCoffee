@@ -2,9 +2,8 @@
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
-const navItems = ["Home", "About", "Menu", "Contact"];
+import { navItems } from "../consts";
 ---
 
 <!DOCTYPE html>
@@ -41,15 +40,6 @@ const navItems = ["Home", "About", "Menu", "Contact"];
     </div>
   </body>
 </html>
-<style is:global>
-  :root {
-  }
-  html {
-  }
-  code {
-  }
-</style>
-
 <script>
   const overlay = document.querySelector(".drawer-overlay");
   const menuButton = document.getElementById("toggle-button");

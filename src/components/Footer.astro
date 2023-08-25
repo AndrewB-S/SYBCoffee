@@ -1,0 +1,30 @@
+---
+import { navItems } from "../consts";
+---
+
+<footer class="bg-royal flex flex-col py-2 pl-2 items-stretch">
+  <div class="flex justify-between">
+    <div class="inline-flex items-center">
+      <img src="/coffee.gif" alt="" class="max-h-4" />
+      <a class="btn btn-ghost normal-case text-l font-bold text-orangered px-2">
+        SYB <img
+          src="/willsCartoonDog.png"
+          alt=""
+          class="w-6 -ml-2 -mr-2 inline-block"
+        /> Coffee</a
+      >
+    </div>
+    <nav class="inline-block">
+      <ul class="flex h-full pr-0.5">
+        {
+          navItems.map((el) => (
+            <li class="flex flex-col justify-center text-slate px-1">
+              <a class="text-[0.6rem]">{el}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+  <small class="text-center">©2023 Andrew Sneed</small>
+</footer>

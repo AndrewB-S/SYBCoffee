@@ -2,16 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/InteractiveNav.astro";
 import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+import About from "../components/About.astro";
 ---
 
 <Layout title="SYB Coffee | Woodstock">
   <Nav />
   <Hero />
+  <About />
+
   <div class="bg-orangered">orangered</div>
   <div class="bg-royal">royal</div>
   <div class="bg-concrete">concrete</div>
   <div class="bg-slate">slate</div>
   <div class="bg-offwhite">offwhite</div>
+  <Footer />
 </Layout>
 <script>
   //Script for the toggling of the logo color.

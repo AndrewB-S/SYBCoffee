@@ -1,13 +1,14 @@
 ---
 import coffeeGif from "/coffee.gif";
-const navItems = ["Home", "About", "Menu", "Contact"];
+import { navItems } from "../consts";
 const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
 ---
 
 <nav class="navbar bg-royal items-stretch p-0 relative">
+  <!-- Logo Icon -->
   <div class="flex-1 py-2 pl-2">
     <img src={coffeeGif} alt="" class="max-h-6" />
-    <a class="btn btn-ghost normal-case text-3xl text-orangered px-2">
+    <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2">
       SYB <img
         src="/willsCartoonDog.png"
         alt=""
@@ -16,6 +17,7 @@ const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
     >
   </div>
 
+  <!-- Hamburger Menu -->
   <div class="flex-none md:hidden">
     <label
       id="toggle-button"
@@ -29,6 +31,8 @@ const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
       </div>
     </label>
   </div>
+
+  <!-- Nav list items -->
   <ul class="hidden md:flex gap-2 items-stretch">
     {
       navItems.map((el) => (
@@ -40,6 +44,7 @@ const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
   </ul>
 </nav>
 <style>
+  /* Styling for the hamburger menu transform on click. */
   .open div div:nth-child(2) {
     opacity: 0;
   }
