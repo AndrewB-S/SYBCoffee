@@ -11,7 +11,7 @@ const marqueeContentStyles = {};
   .marquee {
     position: relative;
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
     user-select: none;
   }
 
@@ -35,13 +35,19 @@ const marqueeContentStyles = {};
   .marquee__content {
     animation: scroll 700s linear infinite;
   }
+  /* Disable for people who prefer */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__content {
+      animation-play-state: paused !important;
+    }
+  }
 </style>
 
 <div class="marquee z-0">
   <ul class="marquee__content">
     {
       images.map((img) => {
-        return <img alt="" src={img.src} />;
+        return <img draggable="false" src={img.src} />;
       })
     }
   </ul>
@@ -49,7 +55,7 @@ const marqueeContentStyles = {};
   <ul class="marquee__content">
     {
       images.map((img) => {
-        return <img alt="" src={img.src} />;
+        return <img draggable="false" src={img.src} />;
       })
     }
   </ul>
