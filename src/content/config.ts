@@ -9,6 +9,17 @@ const drinksCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    image: z.string(),
+    author: z.string(),
+    pubDate: z.date(),
+  }),
+});
+
 export const collections = {
   drinks: drinksCollection,
+  blog: blogCollection,
 };

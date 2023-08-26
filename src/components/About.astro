@@ -1,30 +1,21 @@
 ---
 import { getCollection } from "astro:content";
 import Card from "./Card.astro";
-
 const drinks = await getCollection("drinks");
 ---
 
-<section class="">
+<section id="About">
   <h2>About Us</h2>
   <ul>
-    {
-      drinks.map((drink) => {
-        return (
-          <Card
-            title={drink.data.title}
-            body={drink.body}
-            image={drink.data.image}
-          />
-        );
-      })
-    }
+    {drinks.map((drink) => <Card drink={drink} />)}
   </ul>
 </section>
 
 <!-- 
-title: "Cappucino"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 08 2022"
-heroImage: "/blog-placeholder-3.jpg"
- -->
+---
+title: Cappucino
+image: /blog-placeholder-3.jpg
+---
+
+A cappucino is a type of beverage. There's coffee in it. Wow so good. 
+-->

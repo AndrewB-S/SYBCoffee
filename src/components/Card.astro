@@ -1,17 +1,25 @@
 ---
+import type { CollectionEntry } from "astro:content";
 interface Props {
-  title: string;
-  body: string;
-  image: string;
+  drink: CollectionEntry<"drinks">;
 }
+// const drinksCollection = defineCollection({
+//   type: "content",
+//   // Type-check frontmatter using a schema
+//   schema: z.object({
+//     title: z.string(),
+//     image: z.string(),
+//   }),
+// });
 
-const { title, body } = Astro.props;
+const { title, image } = Astro.props.drink.data;
+const { body } = Astro.props.drink;
 ---
 
-<li class="link-card">
+<li class="flex flex-col">
+  <img src="image" />
   <h2>
     {title}
-    <span>&rarr;</span>
   </h2>
   <p>{body}</p>
 </li>
