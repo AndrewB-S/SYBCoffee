@@ -2,47 +2,55 @@
 const images = await Astro.glob("../assets/images/*").then((images) => {
   return images.map((img) => img.default);
 });
+
+const marqueeContainerStyles = {};
+const marqueeContentStyles = {};
 ---
 
 <style>
-  .swiper-wrapper {
-    -webkit-transition-timing-function: linear !important;
-    -o-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
+  .marquee {
+    position: relative;
+    display: flex;
+    overflow: scroll;
+    user-select: none;
   }
 
-  .swiper-slide {
-    width: auto;
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
+  .marquee__content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Enable animation */
+  .marquee__content {
+    animation: scroll 700s linear infinite;
   }
 </style>
 
-<div class="swiper z-0">
-  <div class="swiper-wrapper">
+<div class="marquee z-0">
+  <ul class="marquee__content">
     {
       images.map((img) => {
-        return (
-          <div class="swiper-slide">
-            <img alt="An admiral cat" src={img.src} />
-          </div>
-        );
+        return <img alt="" src={img.src} />;
       })
     }
-  </div>
+  </ul>
+
+  <ul class="marquee__content">
+    {
+      images.map((img) => {
+        return <img alt="" src={img.src} />;
+      })
+    }
+  </ul>
 </div>
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script is:inline>
-  var swiper = new Swiper(".swiper", {
-    freeMode: true,
-    speed: 20000,
-    loop: true,
-    slidesPerView: "auto",
-    autoplay: {
-      delay: 1,
-      disableOnInteraction: false,
-    },
-  });
-</script>

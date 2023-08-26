@@ -21,7 +21,7 @@ import { navItems } from "../consts";
     <title>{title}</title>
   </head>
 
-  <!--BODY - Includes sidebar drawer from DaisyUI-->
+  {/* Includes sidebar drawer from DaisyUI */}
   <body class="bg-concrete drawer drawer-end">
     <input id="toggle-menu" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
@@ -29,7 +29,7 @@ import { navItems } from "../consts";
       <slot />
     </div>
 
-    <!-- Sidebar Nav Content -->
+    {/* Sidebar Nav Content */}
     <div class="drawer-side md:hidden">
       <label for="toggle-menu" class="drawer-overlay"></label>
       <ul class="menu w-80 h-full bg-royal text-lg">
