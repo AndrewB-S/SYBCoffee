@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import NetlifyCMS from "astro-netlify-cms";
@@ -7,6 +7,9 @@ import NetlifyCMS from "astro-netlify-cms";
 export default defineConfig({
   experimental: {
     assets: true,
+  },
+  image: {
+    service: sharpImageService(),
   },
   integrations: [
     tailwind(),
@@ -18,7 +21,7 @@ export default defineConfig({
           branch: "main",
         },
 
-        media_folder: "public/images",
+        media_folder: "assets/images",
         public_folder: "assets/",
         collections: [
           {

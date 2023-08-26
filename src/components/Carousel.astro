@@ -16,7 +16,7 @@ const images = await Astro.glob("../assets/images/*").then((images) => {
   }
 </style>
 
-<div class="swiper">
+<div class="swiper z-0">
   <div class="swiper-wrapper">
     {
       images.map((img) => {
@@ -35,10 +35,10 @@ const images = await Astro.glob("../assets/images/*").then((images) => {
   <script is:inline>
     var swiper = new Swiper(".swiper", {
       spaceBetween: 0,
-      grabCursor: true,
       freeMode: true,
-      speed: 40000,
+      speed: 20000,
       loop: true,
+      preventInteractionOnTransition: true,
       slidesPerView: "auto",
       autoplay: {
         delay: 1,
