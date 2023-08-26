@@ -13,6 +13,8 @@ const images = await Astro.glob("../assets/images/*").then((images) => {
 
   .swiper-slide {
     width: auto;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
   }
 </style>
 
@@ -28,22 +30,19 @@ const images = await Astro.glob("../assets/images/*").then((images) => {
       })
     }
   </div>
-
-  <script
-    is:inline
-    src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script is:inline>
-    var swiper = new Swiper(".swiper", {
-      spaceBetween: 0,
-      freeMode: true,
-      speed: 20000,
-      loop: true,
-      preventInteractionOnTransition: true,
-      slidesPerView: "auto",
-      autoplay: {
-        delay: 1,
-        disableOnInteraction: false,
-      },
-    });
-  </script>
 </div>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script is:inline>
+  var swiper = new Swiper(".swiper", {
+    freeMode: true,
+    speed: 20000,
+    loop: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+  });
+</script>
