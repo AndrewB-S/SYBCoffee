@@ -11,7 +11,7 @@ const marqueeContentStyles = {};
   .marquee {
     position: relative;
     display: flex;
-    overflow: hidden;
+    overflow-x: scroll;
     user-select: none;
   }
 
@@ -41,8 +41,14 @@ const marqueeContentStyles = {};
       animation-play-state: paused !important;
     }
   }
-</style>
 
+  @media (width > 800px) {
+    .marquee {
+      overflow: hidden;
+    }
+  }
+</style>
+<!-- No JS here ;) -->
 <div class="marquee z-0">
   <ul class="marquee__content">
     {
