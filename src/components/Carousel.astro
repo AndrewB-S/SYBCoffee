@@ -1,7 +1,9 @@
 ---
-const images = await Astro.glob("../assets/images/*").then((images) => {
-  return images.map((img) => img.default);
-});
+const images = await Astro.glob("../assets/images/dogImages/*").then(
+  (images) => {
+    return images.map((img) => img.default);
+  }
+);
 
 const marqueeContainerStyles = {};
 const marqueeContentStyles = {};

@@ -21,8 +21,8 @@ export default defineConfig({
           branch: "main",
         },
 
-        media_folder: "assets/images",
-        public_folder: "assets/",
+        media_folder: "src/assets/images/coffeeImages",
+        public_folder: "dist/_astro",
         collections: [
           {
             name: "drinks",

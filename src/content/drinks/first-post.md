@@ -3,4 +3,4 @@ title: Cappucino
 image: /blog-placeholder-3.jpg
 ---
 
-A cappucino is a type of beverage. There's coffee in it. Wow so good.
+Espresso with more steamed milk. A medium sized drink with moderate coffee flavor.
