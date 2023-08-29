@@ -5,7 +5,7 @@ const drinksCollection = defineCollection({
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
-    image: z.string(),
+    image: z.string().optional(),
   }),
 });
 
@@ -14,8 +14,6 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
-    author: z.string(),
-    pubDate: z.date(),
   }),
 });
 
