@@ -1,7 +1,11 @@
+---
+import heroBackground from "../assets/images/coffee-art.gif";
+---
+
 <main
   id="Home"
   class="hero min-h-[300px] mx-auto bg-center"
-  style="background-image: url('/coffee-art.gif')"
+  style=`background-image: url(${heroBackground.src})`
 >
   <div class="hero-overlay"></div>
   <div class="hero-content text-center text-neutral-focus flex flex-col py-20">
@@ -18,7 +22,7 @@
         class="text-orangered drop-shadow-2xl text-4xl sm:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
       >
         SYB <img
-          src="/willsCartoonDog.png"
+          src={Astro.props.SYB}
           alt=""
           class="z-10 w-12 -mt-4 -ml-2 -mr-2 inline-block"
         /> Coffee

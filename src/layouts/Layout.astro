@@ -30,13 +30,19 @@ import { navItems } from "../consts";
     </div>
 
     {/* Sidebar Nav Content */}
-    <div class="drawer-side md:hidden">
-      <label for="toggle-menu" class="drawer-overlay"></label>
-      <ul class="menu w-80 h-full bg-royal text-lg">
+    <div id="drawerMenu" class="drawer-side md:hidden">
+      <label id="drawer-overlay" for="toggle-menu" class="drawer-overlay"
+      ></label>
+      <ul class="menu w-80 h-full bg-royal text-lg pt-16">
         {
           navItems.map((el) => (
             <li>
-              <a class="hover:text-orangered text-offwhite text-2xl">{el}</a>
+              <a
+                href={`#${el}`}
+                class="menu-item hover:text-orangered active:text-orangered text-offwhite text-2xl"
+              >
+                {el}
+              </a>
             </li>
           ))
         }
@@ -45,9 +51,18 @@ import { navItems } from "../consts";
   </body>
 </html>
 <script>
-  const overlay = document.querySelector(".drawer-overlay");
+  const overlay = document.getElementById("drawer-overlay");
   const menuButton = document.getElementById("toggle-button");
-  overlay?.addEventListener("click", () => {
+  const toggleX = () => {
     menuButton?.classList.toggle("open");
+  };
+  overlay?.addEventListener("click", toggleX);
+  const toggleLabel = document.getElementById("toggle-menu");
+  const menuItems = document.querySelectorAll("a.menu-item");
+  menuItems.forEach((element) => {
+    element.addEventListener("click", () => {
+      toggleX();
+      toggleLabel?.click();
+    });
   });
 </script>

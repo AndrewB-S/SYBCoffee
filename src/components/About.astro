@@ -1,12 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-import Card from "./Card.astro";
-const drinks = await getCollection("drinks");
 ---
 
 <section id="About">
-  <h2>About Us</h2>
-  <ul>
-    {drinks.map((drink) => <Card drink={drink} />)}
-  </ul>
+  <p>
+    Good coffee is an art, and I love making it for people and teaching them how
+    to make it, too. Throughout college I worked as a barista at several local
+    cafes, and I graduated from Kennesaw State University with a Culinary,
+    Sustainability, and Hospitality program degree. Although I have moved on
+    from that profession, I still find myself wanting to return to the craft.
+    That's where you come in.
+  </p>
 </section>

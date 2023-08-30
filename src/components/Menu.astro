@@ -4,6 +4,8 @@ import Card from "./Card.astro";
 const drinks = await getCollection("drinks");
 ---
 
-<ul>
-  {drinks.map((drink) => <Card drink={drink} />)}
-</ul>
+<section id="Menu">
+  <ul>
+    {drinks.map((drink) => <Card drink={drink} />)}
+  </ul>
+</section>

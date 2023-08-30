@@ -5,20 +5,24 @@ import Hero from "../components/Hero.astro";
 import Menu from "../components/Menu.astro";
 import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import logoDogImage from "../assets/images/willsCartoonDog.png";
+const SYB = logoDogImage.src;
 ---
 
 <Layout title="SYB Coffee | Woodstock">
-  <Nav />
-  <Hero />
+  <Nav SYB={SYB} />
+  <Hero SYB={SYB} />
   <About />
   <Menu />
+  <Contact />
 
   <div class="bg-orangered">orangered</div>
   <div class="bg-royal">royal</div>
   <div class="bg-concrete">concrete</div>
   <div class="bg-slate">slate</div>
   <div class="bg-offwhite">offwhite</div>
-  <Footer />
+  <Footer SYB={logoDogImage.src} />
 </Layout>
 <script>
   //Script for the toggling of the logo color.

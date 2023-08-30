@@ -1,19 +1,17 @@
 ---
-const images = await Astro.glob("../assets/images/dogImages/*").then(
-  (images) => {
-    return images.map((img) => img.default);
-  }
-);
-
-const marqueeContainerStyles = {};
-const marqueeContentStyles = {};
+import { Image } from "astro:assets";
+let dogArray = [];
+const dogImages = import.meta.glob("../assets/images/dogImages/*.png");
+for (const path in dogImages) {
+  let img = await dogImages[path]();
+  dogArray.push(img);
+}
 ---
 
 <style>
   .marquee {
-    position: relative;
     display: flex;
-    overflow-x: scroll;
+    overflow: hidden;
     user-select: none;
   }
 
@@ -35,7 +33,7 @@ const marqueeContentStyles = {};
 
   /* Enable animation */
   .marquee__content {
-    animation: scroll 700s linear infinite;
+    animation: scroll 450s linear infinite;
   }
   /* Disable for people who prefer */
   @media (prefers-reduced-motion: reduce) {
@@ -43,28 +41,38 @@ const marqueeContentStyles = {};
       animation-play-state: paused !important;
     }
   }
-
-  @media (width > 800px) {
-    .marquee {
-      overflow: hidden;
-    }
-  }
 </style>
 <!-- No JS here ;) -->
-<div class="marquee z-0">
-  <ul class="marquee__content">
+<div class="marquee">
+  <div class="marquee__content">
     {
-      images.map((img) => {
-        return <img draggable="false" src={img.src} />;
+      dogArray.map((img: any) => {
+        return (
+          <Image
+            src={img.default}
+            width={256}
+            height={256}
+            alt=""
+            decoding="sync"
+          />
+        );
       })
     }
-  </ul>
+  </div>
 
-  <ul class="marquee__content">
+  <div class="marquee__content">
     {
-      images.map((img) => {
-        return <img draggable="false" src={img.src} />;
+      dogArray.map((img: any) => {
+        return (
+          <Image
+            src={img.default}
+            width={128}
+            height={128}
+            alt=""
+            decoding="sync"
+          />
+        );
       })
     }
-  </ul>
+  </div>
 </div>

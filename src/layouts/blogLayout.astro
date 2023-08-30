@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { body } = Astro.props.blogPosts;
-const { image, pubDate, title } = Astro.props.blogPosts.data;
+const { image, title } = Astro.props.blogPosts.data;
 ---
 
 <main>
@@ -17,9 +17,9 @@ const { image, pubDate, title } = Astro.props.blogPosts.data;
     </div>
     <div class="prose">
       <div class="title">
-        <div class="date">
+        <!-- <div class="date">
           <FormattedDate date={pubDate} />
-        </div>
+        </div> -->
         <h1>{title}</h1>
         <hr />
         {body}

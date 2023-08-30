@@ -1,6 +1,8 @@
 ---
 import coffeeGif from "../assets/images/coffee.gif";
 import { navItems } from "../consts";
+import logoDogImage from "../assets/images/willsCartoonDog.png";
+const SYB = logoDogImage.src;
 ---
 
 <footer class="bg-royal flex flex-col py-2 pl-2 items-stretch">
@@ -8,11 +10,7 @@ import { navItems } from "../consts";
     <div class="inline-flex items-center">
       <img src={coffeeGif.src} alt="" class="max-h-4" />
       <a class="btn btn-ghost normal-case text-l font-bold text-orangered px-2">
-        SYB <img
-          src="/willsCartoonDog.png"
-          alt=""
-          class="w-6 -ml-2 -mr-2 inline-block"
-        /> Coffee</a
+        SYB <img src={SYB} alt="" class="w-6 -ml-2 -mr-2 inline-block" /> Coffee</a
       >
     </div>
     <nav class="inline-block">
