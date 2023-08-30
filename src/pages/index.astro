@@ -1,4 +1,5 @@
 ---
+import { getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/InteractiveNav.astro";
 import Hero from "../components/Hero.astro";
@@ -6,13 +7,13 @@ import Menu from "../components/Menu.astro";
 import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
-import logoDogImage from "../assets/images/willsCartoonDog.png";
-const SYB = logoDogImage.src;
+import SYB from "../assets/images/willsCartoonDog.webp";
+const logoImage = SYB;
 ---
 
 <Layout title="SYB Coffee | Woodstock">
-  <Nav SYB={SYB} />
-  <Hero SYB={SYB} />
+  <Nav SYB={logoImage} />
+  <Hero SYB={logoImage} />
   <About />
   <Menu />
   <Contact />
@@ -22,7 +23,7 @@ const SYB = logoDogImage.src;
   <div class="bg-concrete">concrete</div>
   <div class="bg-slate">slate</div>
   <div class="bg-offwhite">offwhite</div>
-  <Footer SYB={logoDogImage.src} />
+  <Footer SYB={logoImage} />
 </Layout>
 <script>
   //Script for the toggling of the logo color.

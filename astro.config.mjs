@@ -1,16 +1,10 @@
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import NetlifyCMS from "astro-netlify-cms";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    assets: true,
-  },
-  image: {
-    service: sharpImageService(),
-  },
   integrations: [
     tailwind(),
     react(),
@@ -31,7 +25,8 @@ export default defineConfig({
             create: true,
             delete: true,
             fields: [
-              { name: "title", widget: "string", label: "Drink Name" },
+              { name: "title", widget: "string", label: "Menu Item Name" },
+              { name: "image", widget: "image", label: "Image" },
               { name: "body", widget: "markdown", label: "Drink Description" },
             ],
           },

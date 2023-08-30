@@ -1,16 +1,25 @@
 ---
-import coffeeGif from "../assets/images/coffee.gif";
+import { Image } from "astro:assets";
+import coffeeGif from "../assets/images/coffee.webm";
 import { navItems } from "../consts";
-import logoDogImage from "../assets/images/willsCartoonDog.png";
-const SYB = logoDogImage.src;
+const { SYB } = Astro.props;
 ---
 
 <footer class="bg-royal flex flex-col py-2 pl-2 items-stretch">
   <div class="flex justify-between">
     <div class="inline-flex items-center">
-      <img src={coffeeGif.src} alt="" class="max-h-4" />
-      <a class="btn btn-ghost normal-case text-l font-bold text-orangered px-2">
-        SYB <img src={SYB} alt="" class="w-6 -ml-2 -mr-2 inline-block" /> Coffee</a
+      <video
+        src={coffeeGif}
+        class="max-h-5"
+        loop
+        autoplay
+        disablepictureinpicture
+        muted></video>
+      <a
+        class="btn btn-ghost normal-case -ml-1 text-xl font-bold text-orangered px-2"
+        href="#"
+      >
+        SYB <Image src={SYB} alt="" class="w-6 -ml-2 -mr-2 inline-block" /> Coffee</a
       >
     </div>
     <nav class="inline-block">

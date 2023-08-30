@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
+//@ts-ignore
 import heroBackground from "../assets/images/coffee-art.avif";
+const { SYB } = Astro.props;
 ---
 
 <main
@@ -19,12 +22,14 @@ import heroBackground from "../assets/images/coffee-art.avif";
       >
       </div>
       <h1
-        class="text-orangered drop-shadow-2xl text-4xl sm:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
+        class="text-orangered drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
       >
-        SYB <img
-          src={Astro.props.SYB}
+        SYB <Image
+          src={SYB}
+          width={100}
+          height={138}
           alt=""
-          class="z-10 w-12 -mt-4 -ml-2 -mr-2 inline-block"
+          class="w-16 -mt-4 -mr-2 inline-block"
         /> Coffee
       </h1>
     </div>

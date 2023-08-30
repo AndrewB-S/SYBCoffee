@@ -1,11 +1,18 @@
 ---
+import { Image, getImage } from "astro:assets";
 import { getCollection } from "astro:content";
-import Card from "./Card.astro";
 const drinks = await getCollection("drinks");
 ---
 
-<section id="Menu">
-  <ul>
-    {drinks.map((drink) => <Card drink={drink} />)}
+<section id="Menu" class="max-w-full">
+  <ul class="flex flex-wrap justify-center items-stretch px-2 gap-4 py-4">
+    {
+      drinks.map((drink) => (
+        <li class="flex flex-col rounded-md py-8 w-[45%] items-center justify-center text-center min-h-[6rem]">
+          <h2>{drink.data.title}</h2>
+          <p>{drink.body}</p>
+        </li>
+      ))
+    }
   </ul>
 </section>

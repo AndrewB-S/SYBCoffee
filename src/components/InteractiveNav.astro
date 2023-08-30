@@ -1,17 +1,25 @@
 ---
-import coffeeGif from "../assets/images/coffee.gif";
-import logoDogImage from "../assets/images/willsCartoonDog.png";
+import { Image } from "astro:assets";
+// @ts-ignore
+import coffeeGif from "../assets/images/coffee.webm";
 import { navItems } from "../consts";
 const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
-const SYB = logoDogImage.src;
+const { SYB } = Astro.props;
 ---
 
 <nav id="navbar" class="navbar bg-royal items-stretch top-0 p-0 sticky z-10">
   {/* Logo */}
   <div class="flex-1 py-2 pl-2">
-    <img src={coffeeGif.src} alt="" class="max-h-6" />
+    <video
+      src={coffeeGif}
+      class="max-h-10"
+      muted
+      autoplay
+      loop
+      playsinline
+      disablepictureinpicture></video>
     <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2">
-      SYB <img src={SYB} alt="" class="w-6 -ml-2 -mr-2 inline-block" /> Coffee</a
+      SYB <Image src={SYB} alt="" class="w-8 -ml-2 -mr-2 inline-block" /> Coffee</a
     >
   </div>
 

@@ -1,4 +1,8 @@
 ---
+import { getImage } from "astro:assets";
+import coffeeBean from "../assets/images/coffee-bean1.png";
+const optimizedCoffeeBean = await getImage({ src: coffeeBean, format: "webp" });
+
 interface Props {
   title: string;
 }
@@ -12,11 +16,7 @@ import { navItems } from "../consts";
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/gif" href="/coffee-bean1.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
+    <link rel="icon" type="image/gif" href={coffeeBean.src} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>

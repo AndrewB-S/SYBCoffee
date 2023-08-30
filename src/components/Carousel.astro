@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageFunction } from "astro:content";
 let dogArray = [];
 const dogImages = import.meta.glob("../assets/images/dogImages/*.png");
 for (const path in dogImages) {
@@ -54,6 +55,7 @@ for (const path in dogImages) {
             height={256}
             alt=""
             decoding="sync"
+            class="w-[128px] h-[128px] md:w-[256px] md:h-[256px]"
           />
         );
       })
@@ -66,10 +68,11 @@ for (const path in dogImages) {
         return (
           <Image
             src={img.default}
-            width={128}
-            height={128}
+            width={256}
+            height={256}
             alt=""
             decoding="sync"
+            class="w-[128px] h-[128px] md:w-[256px] md:h-[256px]"
           />
         );
       })
