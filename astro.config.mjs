@@ -20,7 +20,7 @@ export default defineConfig({
           name: "git-gateway",
           branch: "main",
         },
-
+        disableIdentityWidgetInjection: true,
         media_folder: "src/assets/images/coffeeImages/",
         public_folder: "_astro/",
         collections: [
