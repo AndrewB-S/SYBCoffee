@@ -11,7 +11,7 @@ const { SYB } = Astro.props;
   style=`background-image: url(${heroBackground})`
 >
   <div class="hero-overlay"></div>
-  <div class="hero-content text-center text-neutral-focus flex flex-col py-20">
+  <div class="hero-content text-center text-neutral-focus flex flex-col py-20 gap-10">
     <div
       id="logo-button"
       class="relative border-4 border-orangered rounded-md flex flex-col items-center"
@@ -26,14 +26,12 @@ const { SYB } = Astro.props;
       >
         SYB <Image
           src={SYB}
-          width={100}
-          height={138}
           alt=""
           class="w-16 -mt-4 -mr-2 inline-block"
         /> Coffee
       </h1>
     </div>
-    <p class="text-xl text-offwhite tracking-widest max-w-md">
+    <p class="text-2xl text-offwhite tracking-widest max-w-md font-serif drop-shadow-2xl">
       Premium, freshly-made drinks for events of all kinds.
     </p>
   </div>
