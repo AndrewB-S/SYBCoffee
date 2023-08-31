@@ -6,7 +6,7 @@ const drinksCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      image: image().optional(),
+      image: z.string().optional(),
     }),
 });
 
@@ -15,7 +15,7 @@ const blogCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      image: image().optional(),
+      image: z.string().optional(),
     }),
 });
 

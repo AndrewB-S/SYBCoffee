@@ -1,18 +1,58 @@
 ---
 import { Image, getImage } from "astro:assets";
 import { getCollection } from "astro:content";
+type imagesArray = { default: any };
+
+//Imports the content for the menu, but we will be manually importing the image, as the CMS is only able to see the files in DIST, which is note the filepath during build.
 const drinks = await getCollection("drinks");
+
+//Importing the image modules
+const imagesArray: imagesArray[] = [];
+
+//Every time we import an image, we will push the CMS name to this array. When we need to find an image, we search within this array, and use the index of the found item to access the image in imagesArray.
+const imagesArrayRef: string[] = [];
+
+//Bulk import within server during build for any image found in the folder of images.
+const drinkImages: any = import.meta.glob("../assets/images/coffeeImages/*");
+for (const path in drinkImages) {
+  //load the module
+  const img = await drinkImages[path]();
+  //Format the path of the found image to match what the CMS believes the image is called
+  const formattedPath =
+    "_astro/" + path.split("../assets/images/coffeeImages/")[1];
+  //Add the module to our array
+  imagesArray.push(img);
+  //Add the CMS name for the image module to the array
+  imagesArrayRef.push(formattedPath);
+}
 ---
 
 <section id="Menu" class="max-w-full">
   <ul class="flex flex-wrap justify-center items-stretch px-2 gap-4 py-4">
     {
-      drinks.map((drink) => (
-        <li class="flex flex-col rounded-md py-8 w-[45%] items-center justify-center text-center min-h-[6rem]">
-          <h2>{drink.data.title}</h2>
-          <p>{drink.body}</p>
-        </li>
-      ))
+      drinks.map((drink: any) => {
+        const isMatchedImage = drink.data.image != undefined;
+        const matchedImage =
+          isMatchedImage &&
+          imagesArray[imagesArrayRef.indexOf(drink.data.image)].default;
+
+        return (
+          <li class="flex flex-col rounded-md py-8 w-[45%] md:w-80 items-center justify-start text-center min-h-[6rem] gap-4">
+            {/* Only generate an image component if there is an image matched or else you will get a build error. */}
+            {isMatchedImage && (
+              <Image
+                src={matchedImage}
+                alt=""
+                width={64}
+                height={64}
+                class="rounded-lg"
+              />
+            )}
+            <h2 class="font-bold">{drink.data.title}</h2>
+            <p>{drink.body}</p>
+          </li>
+        );
+      })
     }
   </ul>
 </section>
