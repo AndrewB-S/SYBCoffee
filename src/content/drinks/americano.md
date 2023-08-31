@@ -1,5 +1,5 @@
 ---
-title: Americano
+title: Americanos
 image: _astro/renaissance-style-portrait-black-coffee-in-a-tiny-miniature-cup-centered-golden-ratio-best-quali-594274857.png
 ---
 

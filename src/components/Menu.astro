@@ -27,8 +27,8 @@ for (const path in drinkImages) {
 }
 ---
 
-<section id="Menu" class="max-w-full bg-concrete py-12">
-  <ul class="flex flex-wrap justify-center items-stretch px-2 gap-4 py-4">
+<section id="Menu" class="max-w-full bg-gradient-to-br from-slate from-60% via-royal via 70% to-orangered to-99% py-12">
+  <ul class="flex flex-wrap justify-center items-stretch px-2 gap-2 md:gap-6 py-4">
     {
       drinks.map((drink: any) => {
         const isMatchedImage = drink.data.image != undefined;
@@ -37,18 +37,20 @@ for (const path in drinkImages) {
           imagesArray[imagesArrayRef.indexOf(drink.data.image)].default;
 
         return (
-          <li class="flex flex-col rounded-xl p-4 w-[45%] md:w-80 bg-offwhite drop-shadow-lg">
-            <div class="flex flex-col items-center justify-start text-center min-h-[6rem] gap-1">
+          <li class="flex flex-col rounded-lg w-[47%] md:w-80 bg-offwhite drop-shadow-xl mb-4">
+            <div class="flex flex-col justify-start text-center min-h-[12rem]">
               {/* Only generate an image component if there is an image matched or else you will get a build error. */}
               {isMatchedImage && (
                 <Image
                   src={matchedImage}
                   alt=""
-                  class="rounded-xl w-full mb-3 h-20 object-cover"
+                  class="rounded-t-lg w-full mb-2 h-20 object-cover"
                 />
               )}
-              <h2 class="font-bold">{drink.data.title}</h2>
-              <p>{drink.body}</p>
+              <div class="flex flex-col px-2 md:px-4 pb-4">
+              <h2 class="font-bold text-xl mb-2 tracking-wider">{drink.data.title}</h2>
+              <p class="text-lg tracking-wide leading-tight">{drink.body}</p>
+              </div>
             </div>
           </li>
         );
