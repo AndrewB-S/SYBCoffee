@@ -1,5 +1,5 @@
 ---
-title: Espressos
+title: Espresso
 image: _astro/00097-3901288698.png
 ---
 
