@@ -1,8 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import pictureOfWill from "../assets/images/dogImages/admiral.png"
 ---
 
 <section id="About">
-  <p>
+  <main class="flex flex-col md:flex-row">
+  <Image src={pictureOfWill} alt="Will Turner, Owner of Syb Coffee" />
+  <p class="text-center">
     Good coffee is an art, and I love making it for people and teaching them how
     to make it, too. Throughout college I worked as a barista at several local
     cafes, and I graduated from Kennesaw State University with a Culinary,
@@ -10,4 +14,5 @@
     from that profession, I still find myself wanting to return to the craft.
     That's where you come in.
   </p>
+  </main>
 </section>

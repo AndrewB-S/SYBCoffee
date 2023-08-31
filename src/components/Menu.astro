@@ -27,7 +27,7 @@ for (const path in drinkImages) {
 }
 ---
 
-<section id="Menu" class="max-w-full bg-royal py-12">
+<section id="Menu" class="max-w-full bg-concrete py-12">
   <ul class="flex flex-wrap justify-center items-stretch px-2 gap-4 py-4">
     {
       drinks.map((drink: any) => {
@@ -37,19 +37,21 @@ for (const path in drinkImages) {
           imagesArray[imagesArrayRef.indexOf(drink.data.image)].default;
 
         return (
-          <li class="flex flex-col py-8 px-2 w-[45%] md:w-80 items-center justify-start text-center min-h-[6rem] gap-4 bg-offwhite">
-            {/* Only generate an image component if there is an image matched or else you will get a build error. */}
-            {isMatchedImage && (
-              <Image
-                src={matchedImage}
-                alt=""
-                width={64}
-                height={64}
-                class="rounded-xl"
-              />
-            )}
-            <h2 class="font-bold">{drink.data.title}</h2>
-            <p>{drink.body}</p>
+          <li class="flex flex-col rounded-xl p-4 w-[45%] md:w-80 bg-offwhite drop-shadow-lg">
+            <div class="flex flex-col items-center justify-start text-center min-h-[6rem] gap-1">
+              {/* Only generate an image component if there is an image matched or else you will get a build error. */}
+              {isMatchedImage && (
+                <Image
+                  src={matchedImage}
+                  alt=""
+                  width={256}
+                  height={256}
+                  class="rounded-xl w-full h-20 object-cover mb-3"
+                />
+              )}
+              <h2 class="font-bold">{drink.data.title}</h2>
+              <p>{drink.body}</p>
+            </div>
           </li>
         );
       })
