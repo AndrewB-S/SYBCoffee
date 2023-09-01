@@ -1,13 +1,15 @@
 ---
 import Carousel from "./Carousel.astro";
+const options = ["-select-", "Wedding/Anniversary", "Birthday", "Corporate Event", "Coffee Lessons", "Other"]
 ---
 
-<section id="Contact" class="overflow-hidden flex flex-col items-center py-16 gap-10 bg-royal">
-    <div
-    id="logo-button"
+<section
+  id="Contact"
+  class="overflow-hidden flex flex-col items-center py-16 gap-10 bg-royal scroll-m-16"
+>
+  <div
     class="relative border-4 border-orangered rounded-xl flex flex-col items-center"
   >
-  
     <h2
       class="text-offwhite drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
     >
@@ -15,7 +17,69 @@ import Carousel from "./Carousel.astro";
     </h2>
   </div>
   <Carousel />
-<form action="" class="form-control w-full max-w-xs"></form>
-<label for="email">Email address:</label>
-  <input id="email" type="text" class="input">
+  <div class="flex flex-col items-center gap-10 w-full border-t-8 border-b-8 border-orangered px-4 py-20">
+  <h3
+    class="text-3xl font-bold text-offwhite tracking-wide underline decoration-orangered"
+  >
+    Need to get in touch?
+  </h3>
+  <span class="text-offwhite text-xl italic"
+    >Reach out to us via email below!</span
+  >
+  <form action="mailto:ndrwsnd@gmail.com" class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch ">
+    <div class="flex flex-col text-offwhite gap-1">
+      <label for="name" class="text-offwhite pl-1 gap-1"
+        >Name:</label
+      >
+      <input id="name" class="input" placeholder="Name"/>
+    </div>
+    <div class="flex flex-col gap-1">
+      <label for="emailSubject" class="text-offwhite pl-1"
+        >What type of event would you like to get more info about?</label
+      >
+      <select id="emailSubject" class="select select-bordered">
+        {options.map(option => {
+          return (
+            <option class="checked:bg-royal checked:text-offwhite p-4" >{option}</option>
+          )
+        })}
+      </select>
+    </div>
+    <div class="flex flex-col gap-1">
+    <label class="text-offwhite pl-1 gap-1">Describe your event/request below:</label>
+    <textarea
+      id="emailBody"
+      class="rounded-lg p-4 focus:outline-orangered border-slate w-full"
+      placeholder="Describe your event..."
+      />
+    </div>
+    <a id="emailSubmitButton" class="self-center w-auto border-4 hover:scale-110 rounded-lg cursor-pointer hover:bg-orangered border-orangered text-offwhite text-2xl font-bold p-4 mt-4">Contact Us</a>
+  </form>
+</div>
 </section>
+
+<script is:inline>
+  const optionsMap = {"-select-":undefined, "Wedding/Anniversary":"Booking Contact Request for a Wedding/Anniversary ", "Birthday":"Booking Contact Request for a Birthday ", "Corporate Event":"Booking Contact Request for a Corporate Event ", "Coffee Lessons":"Booking Contact Request for Coffee Lessons ", "Other":"Booking Request for "}
+  const mailSubmitButton = document.getElementById('emailSubmitButton');
+
+  const handleSubmit = () => {  
+    let selectedTitleOption = document.getElementById('emailSubject').value
+    let emailbody = document.getElementById('emailBody').value
+    let name = document.getElementById('name').value
+
+    if(optionsMap[selectedTitleOption] == undefined){
+      alert('Please select a valid option')
+      return;
+    }else{
+
+      let href = "mailto:sybcoffee@gmail.com" + `?subject=${encodeURIComponent(name + " | " + optionsMap[selectedTitleOption])}&body=${encodeURIComponent("Dear Syb Coffee, \n\n  " + emailbody)}`;
+
+      mailSubmitButton.href = href
+    }
+   }
+
+
+  mailSubmitButton.addEventListener('click', handleSubmit)
+ 
+
+</script>

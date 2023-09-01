@@ -29,14 +29,13 @@ for (const path in drinkImages) {
 
 <section id="Menu" class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center gap-10">
   <div
-  id="logo-button"
   class="relative border-4 border-orangered rounded-xl flex flex-col items-center"
 >
 
   <h2
     class="text-offwhite drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
   >
-    MENU
+    Menu
   </h2>
 </div>
   <ul class="flex flex-wrap justify-center items-stretch px-4 gap-2 md:gap-6 max-w-[1920px] m-auto">
@@ -50,7 +49,6 @@ for (const path in drinkImages) {
         return (
           <li class="flex flex-col rounded-lg w-full md:w-80 bg-offwhite drop-shadow-xl mb-4 text-black">
             <div class="flex flex-col justify-start items-center text-center min-h-[12rem]">
-              {/* Only generate an image component if there is an image matched or else you will get a build error. */}
               {isMatchedImage && (
                 <Image
                   src={matchedImage}
