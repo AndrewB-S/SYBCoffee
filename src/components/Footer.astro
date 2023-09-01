@@ -27,7 +27,7 @@ const { SYB } = Astro.props;
         {
           navItems.map((el) => (
             <li class="flex flex-col justify-center text-offwhite px-1">
-              <a class="text-xs">{el}</a>
+              <a class="text-xs hover:text-orangered" href=`#${el}`>{el}</a>
             </li>
           ))
         }
