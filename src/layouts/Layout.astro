@@ -16,15 +16,12 @@ import { navItems } from "../consts";
   <head>
   <BaseHead title={title}, description="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!" image={optimizedCoffeeBean.src} />
   </head>
-
-  {/* Includes sidebar drawer from DaisyUI */}
   <body class="bg-concrete drawer drawer-end">
     <input id="toggle-menu" type="checkbox" class="drawer-toggle" aria-label="Menu Toggle"/>
     <div class="drawer-content">
       <slot />
     </div>
 
-    {/* Sidebar Nav Content */}
     <div id="drawerMenu" class="drawer-side md:hidden">
       <label id="drawer-overlay" for="toggle-menu" class="drawer-overlay" aria-hidden="true"
       />
