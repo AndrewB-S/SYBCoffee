@@ -4,18 +4,30 @@ import FaqCard from "./FaqCard.astro";
 
 <section
   id="FAQ"
-  class="max-w-full bg-offwhite py-16 px-4 scroll-m-16 flex flex-col items-center gap-10"
+  class="max-w-full bg-offwhite py-16 px-8 scroll-m-16 flex flex-col items-center gap-10"
 >
-  <div id="logo-button" class="flex flex-col items-center">
+  <div id="logo-button" class="flex flex-col items-center gap-12">
     <h2
       class="text-black underline decoration-orangered drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
     >
       FAQ
     </h2>
-    <ul>
+    <ul class="flex flex-col gap-10 lg:flex-row flex-wrap justify-center">
       <FaqCard
-        question="What would you say you do here?"
-        answer="We make coffee good."
+        question="What is SYB Coffee?"
+        answer="SYB coffee is a mobile coffee catering company. We bring our setup to your event and prepare freshly-brewed coffee and espresso drinks to order for your guests."
+      />
+      <FaqCard
+        question="Can you make ____  for my event?"
+        answer="Yes. If you need me to make a drink I don't have listed on the menu, you can request it in advance of the booking and serve it for your event. There may be an additional charge associated with specialty ingredients or preparation."
+      />
+      <FaqCard
+        question="Do you serve alcohol?"
+        answer="At this time, SYB Coffee does not serve alcohol. However, we can't stop customers from adding anything to their drinks after they have been made."
+      />
+      <FaqCard
+        question="What is a coffee lesson?"
+        answer="I've studied modern coffee brewing science and techniques for years, have learned some special and effective ways to prepare coffee with different kinds of equipment and levels of preparation, and can make recommendations aimed at your specific tastes for coffee flavors, budget, and how fast you need it ready to drink. In a coffee lesson, I meet with you and share my knowledge 1-on-1, so you can make your own perfect cup at home every day."
       />
     </ul>
   </div>

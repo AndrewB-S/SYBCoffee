@@ -4,17 +4,20 @@ import coffeeGif from "../assets/images/coffee.webm";
 import { navItems } from "../consts";
 const { SYB } = Astro.props;
 ---
-<div class="bg-royal">
-<footer class="m-auto flex flex-col py-2 pl-2 items-stretch max-w-screen-2xl">
-  <div class="flex justify-between">
-    <div class="inline-flex items-center">
+<div class="bg-royal flex justify-center -mt-1">
+<footer class="flex flex-col py-4 items-stretch max-w-screen-2xl gap-4">
+  <div class="flex flex-col items-center [@media(min-width:380px)]:flex-row [@media(min-width:360px)]:justify-between px-4">
+    <div class="inline-flex items-center justify-between">
       <video
         src={coffeeGif}
-        class="max-h-5"
-        loop
+        muted
         autoplay
+        loop
+        playsinline
+        disableremoteplayback?
+        x-webkit-airplay="deny"
         disablepictureinpicture
-        muted></video>
+        class="w-5 h-5"></video>
       <a
         class="btn btn-ghost normal-case -ml-1 text-xl font-bold text-orangered px-2"
         href="#Home"
@@ -32,8 +35,8 @@ const { SYB } = Astro.props;
           ))
         }
       </ul>
-    </nav>
-  </div>
-  <small class="text-center text-offwhite">©2023 Andrew Sneed</small>
-</footer>
+      </nav>
+    </div>
+    <small class="text-center text-offwhite">©2023 Andrew Sneed</small>
+  </footer>
 </div>

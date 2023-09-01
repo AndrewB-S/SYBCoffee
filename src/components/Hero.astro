@@ -11,7 +11,9 @@ const { SYB } = Astro.props;
   style=`background-image: url(${heroBackground})`
 >
   <div class="hero-overlay"></div>
-  <div class="hero-content text-center text-neutral-focus flex flex-col py-20 gap-8">
+  <div
+    class="hero-content text-center text-neutral-focus flex flex-col py-20 gap-8"
+  >
     <div
       id="logo-button"
       class="relative border-4 border-orangered rounded-md flex flex-col items-center"
@@ -24,15 +26,15 @@ const { SYB } = Astro.props;
       <h1
         class="text-orangered drop-shadow-2xl text-3xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
       >
-        SYB <Image
-          src={SYB}
-          alt=""
-          class="w-16 -mt-4 -mr-2 inline-block"
-        /> Coffee
+        SYB <Image src={SYB} alt="" class="w-16 -mt-4 -mr-2 inline-block" />
+         Coffee
       </h1>
     </div>
-    <p class="text-2xl text-offwhite tracking-widest max-w-md font-serif drop-shadow-2xl leading-normal">
-      Premium, freshly-made coffee for events of all kinds.
+    <p
+      class="text-2xl text-offwhite tracking-wider max-w-md font-serif drop-shadow-2xl leading-normal"
+    >
+      Mobile coffee catering offering premium drinks for events of all
+      occasions.
     </p>
   </div>
 </section>
