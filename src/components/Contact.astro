@@ -70,6 +70,9 @@ const options = ["-select-", "Wedding/Anniversary", "Birthday", "Corporate Event
     if(optionsMap[selectedTitleOption] == undefined){
       alert('Please select a valid option')
       return;
+    }else if(name == undefined){
+      alert('Please input your preferred contact name')
+      return;
     }else{
 
       let href = "mailto:sybcoffee@gmail.com" + `?subject=${encodeURIComponent(name + " | " + optionsMap[selectedTitleOption])}&body=${encodeURIComponent("Dear Syb Coffee, \n\n  " + emailbody)}`;
