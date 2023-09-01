@@ -6,8 +6,8 @@ import { navItems } from "../consts";
 const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
 const { SYB } = Astro.props;
 ---
-
-<nav id="navbar" class="navbar bg-royal items-stretch top-0 p-0 sticky z-10">
+<div class="flex justify-center bg-royal top-0 p-0 sticky z-10 ">
+<nav id="navbar" class="navbar items-stretch max-w-screen-lg ">
   {/* Logo */}
   <div class="flex-1 py-2 pl-2">
     <video
@@ -52,6 +52,7 @@ const { SYB } = Astro.props;
     }
   </ul>
 </nav>
+</div>
 <style>
    {
     /* Styling for the hamburger menu transform on click.*/

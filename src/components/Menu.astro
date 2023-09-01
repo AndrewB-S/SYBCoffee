@@ -27,8 +27,19 @@ for (const path in drinkImages) {
 }
 ---
 
-<section id="Menu" class="max-w-full bg-gradient-to-bl from-gray-200 from-20% via-concrete via 70% py-16 scroll-m-16">
-  <ul class="flex flex-wrap justify-center items-stretch px-2 gap-2 md:gap-6">
+<section id="Menu" class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center gap-10">
+  <div
+  id="logo-button"
+  class="relative border-4 border-orangered rounded-xl flex flex-col items-center"
+>
+
+  <h1
+    class="text-orangered drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
+  >
+    MENU
+  </h1>
+</div>
+  <ul class="flex flex-wrap justify-center items-stretch px-2 gap-2 md:gap-6 max-w-[1920px] m-auto">
     {
       drinks.map((drink: any) => {
         const isMatchedImage = drink.data.image != undefined;
@@ -44,11 +55,11 @@ for (const path in drinkImages) {
                 <Image
                   src={matchedImage}
                   alt=""
-                  class="rounded-t-lg w-full mb-2 -mt-0.5 h-20 object-cover"
+                  class="rounded-t-lg w-full mb-2 -mt-0.5 h-28 object-cover"
                 />
               )}
               <div class="flex flex-col px-2 md:px-4 pb-4 md:pb-6">
-              <h2 class="text-2xl font-bold mb-2">{drink.data.title}</h2>
+              <h3 class="text-2xl font-bold mb-2">{drink.data.title}</h3>
               <p class="leading-snug font-serif">{drink.body}</p>
               </div>
             </div>
