@@ -1,5 +1,4 @@
 ---
-import { getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/InteractiveNav.astro";
 import Hero from "../components/Hero.astro";
@@ -8,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import SYB from "../assets/images/willsCartoonDog.webp";
+import Faq from "../components/Faq.astro";
 const logoImage = SYB;
 ---
 
@@ -16,6 +16,7 @@ const logoImage = SYB;
   <Hero SYB={logoImage} />
   <About />
   <Menu />
+  <Faq />
   <Contact />
 
   <div class="bg-orangered">orangered</div>

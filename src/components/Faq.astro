@@ -1,0 +1,23 @@
+---
+import FaqCard from "./FaqCard.astro";
+
+---
+
+<section id="FAQ" class="max-w-full bg-offwhite py-16 px-4 scroll-m-16 flex flex-col items-center gap-10">
+        <div
+        id="logo-button"
+        class="flex flex-col items-center"
+      >
+      
+        <h2
+          class="text-black underline decoration-orangered drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
+        >
+          FAQ
+        </h2>
+        <ul>
+            <FaqCard 
+            question="What would you say you do here?" 
+            answer="We make coffee good." />
+        </ul>
+      </div>
+</section>

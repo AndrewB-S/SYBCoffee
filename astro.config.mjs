@@ -5,6 +5,7 @@ import NetlifyCMS from "astro-netlify-cms";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.sybcoffee.com",
   experimental: {
     assets: true,
   },

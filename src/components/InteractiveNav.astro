@@ -4,19 +4,21 @@ import { Image } from "astro:assets";
 import coffeeGif from "../assets/images/coffee.webm";
 import { navItems } from "../consts";
 const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
-const { SYB } = Astro.props;
+import SYB from "../assets/images/smallCartoonDog.webp"
 ---
 <div class="flex justify-center bg-royal top-0 p-0 sticky z-10 ">
-<nav id="navbar" class="navbar items-stretch max-w-screen-2xl ">
+<nav id="navbar" class="navbar items-stretch justify-between max-w-screen-2xl ">
   {/* Logo */}
   <div class="flex-1 py-2 pl-2">
     <video
       src={coffeeGif}
-      class="max-h-10"
+      class="h-10 w-10"
       muted
       autoplay
       loop
       playsinline
+      disableremoteplayback?
+      x-webkit-airplay="deny"
       disablepictureinpicture></video>
     <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2" href="#Home">
       SYB <Image src={SYB} alt="" class="w-8 -ml-2 -mr-2 inline-block" /> Coffee</a
