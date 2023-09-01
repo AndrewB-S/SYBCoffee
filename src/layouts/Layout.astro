@@ -1,4 +1,5 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
 import { getImage } from "astro:assets";
 import coffeeBean from "../assets/images/coffee-bean1.png";
 const optimizedCoffeeBean = await getImage({ src: coffeeBean, format: "webp" });
@@ -12,23 +13,13 @@ import { navItems } from "../consts";
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/gif" href={coffeeBean.src} />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+  <BaseHead title={title}, description="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!" image={optimizedCoffeeBean.src} />
   </head>
 
   {/* Includes sidebar drawer from DaisyUI */}
   <body class="bg-concrete drawer drawer-end">
     <input id="toggle-menu" type="checkbox" class="drawer-toggle" aria-label="Menu Toggle"/>
     <div class="drawer-content">
-      <!-- PAGE CONTENT GOES INSIDE SLOT  -->
       <slot />
     </div>
 

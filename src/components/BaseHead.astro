@@ -5,21 +5,19 @@
 interface Props {
   title: string;
   description: string;
-  image?: string;
+  image: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 {/* Global Metadata */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/coffee-bean1.png" />
+<link rel="icon" type="image/svg+xml" href={image} />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Font preloads -->
 <link
   rel="preload"
   href="/fonts/atkinson-regular.woff"
