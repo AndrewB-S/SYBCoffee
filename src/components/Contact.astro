@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import SYB from "../assets/images/willsCartoonDog.webp";
 import Carousel from "./Carousel.astro";
 import rightArrow from "../assets/images/rightArrow.webp";
 import leftArrow from "../assets/images/leftArrow.webp";
@@ -48,23 +50,27 @@ const options = [
     >
       Need to get in touch?
     </h3>
+    <Image src={SYB} alt="Sybil the dog" />
     <span class="text-offwhite text-xl italic"
       >Reach out to us via email below!</span
     >
-    <img
-      src={topLeftArrow.src}
+    <Image
+      src={topLeftArrow}
       alt=""
       class="absolute hidden -rotate-6 md:block -left-56 -top-40"
+      quality="low"
     />
-    <img
-      src={rightArrow.src}
+    <Image
+      src={rightArrow}
       alt=""
       class="absolute -rotate-[42deg] hidden md:block -left-32 -bottom-44"
+      quality="low"
     />
-    <img
-      src={leftArrow.src}
+    <Image
+      src={leftArrow}
       alt=""
       class="absolute hidden rotate-[6deg] md:block -right-40 bottom-20"
+      quality="low"
     />
     <form
       class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch md:z-10"
