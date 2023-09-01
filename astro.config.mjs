@@ -13,11 +13,11 @@ export default defineConfig({
     react(),
     NetlifyCMS({
       config: {
+        disableIdentityWidgetInjection: true,
         backend: {
           name: "git-gateway",
           branch: "main",
         },
-        disableIdentityWidgetInjection: true,
         media_folder: "src/assets/images/coffeeImages/",
         public_folder: "_astro/",
         collections: [
