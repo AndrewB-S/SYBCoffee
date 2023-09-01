@@ -4,8 +4,8 @@ import coffeeGif from "../assets/images/coffee.webm";
 import { navItems } from "../consts";
 const { SYB } = Astro.props;
 ---
-
-<footer class="bg-royal flex flex-col py-2 pl-2 items-stretch">
+<div class="bg-royal">
+<footer class="m-auto flex flex-col py-2 pl-2 items-stretch max-w-screen-2xl">
   <div class="flex justify-between">
     <div class="inline-flex items-center">
       <video
@@ -17,7 +17,7 @@ const { SYB } = Astro.props;
         muted></video>
       <a
         class="btn btn-ghost normal-case -ml-1 text-xl font-bold text-orangered px-2"
-        href="#"
+        href="#Home"
       >
         SYB <Image src={SYB} alt="" class="w-6 -ml-2 -mr-2 inline-block" /> Coffee</a
       >
@@ -26,13 +26,14 @@ const { SYB } = Astro.props;
       <ul class="flex h-full pr-0.5">
         {
           navItems.map((el) => (
-            <li class="flex flex-col justify-center text-slate px-1">
-              <a class="text-[0.6rem]">{el}</a>
+            <li class="flex flex-col justify-center text-offwhite px-1">
+              <a class="text-xs">{el}</a>
             </li>
           ))
         }
       </ul>
     </nav>
   </div>
-  <small class="text-center">©2023 Andrew Sneed</small>
+  <small class="text-center text-offwhite">©2023 Andrew Sneed</small>
 </footer>
+</div>

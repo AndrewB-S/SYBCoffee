@@ -7,7 +7,7 @@ const baseLineStyling = "w-6 h-1 bg-offwhite rounded transition-all ";
 const { SYB } = Astro.props;
 ---
 <div class="flex justify-center bg-royal top-0 p-0 sticky z-10 ">
-<nav id="navbar" class="navbar items-stretch max-w-screen-xl ">
+<nav id="navbar" class="navbar items-stretch max-w-screen-2xl ">
   {/* Logo */}
   <div class="flex-1 py-2 pl-2">
     <video
@@ -18,7 +18,7 @@ const { SYB } = Astro.props;
       loop
       playsinline
       disablepictureinpicture></video>
-    <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2">
+    <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2" href="#Home">
       SYB <Image src={SYB} alt="" class="w-8 -ml-2 -mr-2 inline-block" /> Coffee</a
     >
   </div>
