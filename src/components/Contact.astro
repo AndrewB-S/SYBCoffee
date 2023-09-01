@@ -1,6 +1,8 @@
 ---
 import Carousel from "./Carousel.astro";
-import rightArrow from "../assets/images/arrowright.svg";
+import rightArrow from "../assets/images/rightArrow.webp";
+import leftArrow from "../assets/images/leftArrow.webp";
+import topLeftArrow from "../assets/images/topLeftArrow.webp";
 const options = [
   "-select-",
   "Wedding/Anniversary",
@@ -13,7 +15,7 @@ const options = [
 
 <section
   id="Contact"
-  class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center gap-10"
+  class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center gap-10 overflow-hidden"
 >
   <div
     class="relative border-4 border-orangered rounded-xl flex flex-col items-center"
@@ -39,20 +41,34 @@ const options = [
     > to taste the hype!</span
   >
   <div
-    class="flex flex-col items-center gap-10 w-full border-t-8 border-b-8 border-orangered px-4 py-20"
-    style=`background-image:url(${rightArrow})`
+    class="flex flex-col items-center gap-10 w-full border-t-4 border-b-4 border-orangered px-4 pt-20 pb-32 relative max-w-screen-lg"
   >
     <h3
-      class="text-3xl font-bold text-offwhite tracking-wide underline decoration-orangered"
+      class="text-4xl font-bold text-offwhite tracking-wide underline decoration-orangered"
     >
       Need to get in touch?
     </h3>
     <span class="text-offwhite text-xl italic"
       >Reach out to us via email below!</span
     >
+    <img
+      src={topLeftArrow.src}
+      alt=""
+      class="absolute hidden -rotate-6 md:block -left-56 -top-40"
+    />
+    <img
+      src={rightArrow.src}
+      alt=""
+      class="absolute -rotate-[42deg] hidden md:block -left-32 -bottom-44"
+    />
+    <img
+      src={leftArrow.src}
+      alt=""
+      class="absolute hidden rotate-[6deg] md:block -right-40 bottom-20"
+    />
     <form
       action="mailto:ndrwsnd@gmail.com"
-      class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch"
+      class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch md:z-10"
     >
       <div class="flex flex-col text-offwhite gap-1">
         <label for="name" class="text-offwhite pl-1 gap-1">Name:</label>
@@ -93,37 +109,37 @@ const options = [
 </section>
 
 <script is:inline>
-  const optionsMap = {
-    "-select-": undefined,
-    "Wedding/Anniversary": "Booking Contact Request for a Wedding/Anniversary ",
-    Birthday: "Booking Contact Request for a Birthday ",
-    "Corporate Event": "Booking Contact Request for a Corporate Event ",
-    "Coffee Lessons": "Booking Contact Request for Coffee Lessons ",
-    Other: "Booking Contact Request",
-  };
-  const mailSubmitButton = document.getElementById("emailSubmitButton");
+const optionsMap = {
+  "-select-": undefined,
+  "Wedding/Anniversary": "Booking Contact Request for a Wedding/Anniversary ",
+  Birthday: "Booking Contact Request for a Birthday ",
+  "Corporate Event": "Booking Contact Request for a Corporate Event ",
+  "Coffee Lessons": "Booking Contact Request for Coffee Lessons ",
+  Other: "Booking Contact Request",
+};
+const mailSubmitButton = document.getElementById("emailSubmitButton");
 
-  const handleSubmit = () => {
-    let selectedTitleOption = document.getElementById("emailSubject").value;
-    let emailbody = document.getElementById("emailBody").value;
-    let name = document.getElementById("name").value;
+const handleSubmit = () => {
+  let selectedTitleOption = document.getElementById("emailSubject").value;
+  let emailbody = document.getElementById("emailBody").value;
+  let name = document.getElementById("name").value;
 
-    if (optionsMap[selectedTitleOption] == undefined) {
-      alert("Please select a valid option");
-      return;
-    } else if (name == undefined) {
-      alert("Please input your preferred contact name");
-      return;
-    } else {
-      let href =
-        "mailto:sybcoffee@gmail.com" +
-        `?subject=${encodeURIComponent(
-          name + " | " + optionsMap[selectedTitleOption],
-        )}&body=${encodeURIComponent("Dear Syb Coffee, \n\n  " + emailbody)}`;
+  if (optionsMap[selectedTitleOption] == undefined) {
+    alert("Please select a valid option");
+    return;
+  } else if (name == undefined) {
+    alert("Please input your preferred contact name");
+    return;
+  } else {
+    let href =
+      "mailto:sybcoffee@gmail.com" +
+      `?subject=${encodeURIComponent(
+        name + " | " + optionsMap[selectedTitleOption],
+      )}&body=${encodeURIComponent("Dear Syb Coffee, \n\n  " + emailbody)}`;
 
-      mailSubmitButton.href = href;
-    }
-  };
+    mailSubmitButton.href = href;
+  }
+};
 
-  mailSubmitButton.addEventListener("click", handleSubmit);
+mailSubmitButton.addEventListener("click", handleSubmit);
 </script>
