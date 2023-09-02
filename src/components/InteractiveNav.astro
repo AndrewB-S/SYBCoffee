@@ -10,16 +10,11 @@ import SYB from "../assets/images/smallCartoonDog.webp"
 <nav id="navbar" class="navbar items-stretch justify-between max-w-screen-2xl ">
   {/* Logo */}
   <div class="flex-1 py-2 pl-2">
-    <video
-      src={coffeeGif}
+    <img
+      src={coffeeGif.src}
+      alt=""
       class="h-10 w-10"
-      muted
-      autoplay
-      loop
-      playsinline
-      disableremoteplayback?
-      x-webkit-airplay="deny"
-      disablepictureinpicture></video>
+      />
     <a class="btn btn-ghost normal-case text-3xl font-bold text-orangered px-2" href="#Home">
       SYB <Image src={SYB} alt="" class="-ml-2 -mr-2 inline-block" /> Coffee</a
     >
