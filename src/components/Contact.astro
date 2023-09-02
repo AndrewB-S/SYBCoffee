@@ -17,99 +17,102 @@ const options = [
 
 <section
   id="Contact"
-  class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center gap-10 overflow-hidden"
+  class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center"
 >
-  <div
-    class="relative border-4 border-orangered rounded-xl flex flex-col items-center"
-  >
-    <h2
-      class="text-offwhite drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
+  <div class="flex flex-col items-center gap-10 overflow-hidden">
+    <div
+      class="border-4 border-orangered rounded-xl flex flex-col items-center"
     >
-      Contact
-    </h2>
-  </div>
-  <span
-    class="text-center block text-3xl tracking-wide font-bold text-offwhite px-4"
-    ><span class="italic text-4xl underline decoration-orangered">Everyone</span
-    > loves SYB Coffee!</span
-  >
-  <Carousel />
-  <span
-    class="text-center block text-2xl tracking-wide font-bold text-offwhite px-4"
-    ><a
-      href="#name"
-      aria-label="book now"
-      class="underline decoration-orangered text-3xl italic">Book now</a
-    > to taste the hype!</span
-  >
-  <div
-    class="flex flex-col items-center gap-10 w-full border-t-4 border-b-4 border-orangered px-4 pt-20 pb-32 relative max-w-screen-lg"
-  >
-    <h3
-      class="text-4xl font-bold text-offwhite tracking-wide underline decoration-orangered"
-    >
-      Need to get in touch?
-    </h3>
-    <Image src={SYB} alt="Sybil the dog" />
-    <span class="text-offwhite text-xl italic"
-      >Reach out to us via email below!</span
-    >
-    <Image
-      src={topLeftArrow}
-      alt=""
-      class="absolute hidden -rotate-6 md:block -left-56 -top-40"
-      quality="low"
-    />
-    <Image
-      src={rightArrow}
-      alt=""
-      class="absolute -rotate-[42deg] hidden md:block -left-32 -bottom-44"
-      quality="low"
-    />
-    <Image
-      src={leftArrow}
-      alt=""
-      class="absolute hidden rotate-[6deg] md:block -right-40 bottom-20"
-      quality="low"
-    />
-    <form
-      class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch md:z-10"
-    >
-      <div class="flex flex-col text-offwhite gap-1">
-        <label for="name" class="text-offwhite pl-1 gap-1">Name:</label>
-      </div>
-      <input id="name" class="input" placeholder="Name" />
-      <div class="flex flex-col gap-1">
-        <label for="emailSubject" class="text-offwhite pl-1">
-          What type of event would you like to get more info about?
-        </label>
-        <select id="emailSubject" class="select select-bordered">
-          {
-            options.map((option) => {
-              return (
-                <option class="checked:bg-royal checked:text-offwhite p-4">
-                  {option}
-                </option>
-              );
-            })
-          }
-        </select>
-      </div>
-      <div class="flex flex-col gap-1">
-        <label class="text-offwhite pl-1 gap-1"
-          >Describe your event/request below:</label
-        >
-        <textarea
-          id="emailBody"
-          class="rounded-lg p-4 focus:outline-orangered border-slate w-full"
-          placeholder="Describe your event..."></textarea>
-      </div>
-      <a
-        id="emailSubmitButton"
-        class="self-center w-auto border-4 hover:scale-110 rounded-lg cursor-pointer hover:bg-orangered border-orangered text-offwhite text-2xl font-bold p-4 mt-4"
-        >Contact Us</a
+      <h2
+        class="text-offwhite drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
       >
-    </form>
+        Contact
+      </h2>
+    </div>
+    <span
+      class="text-center block text-3xl tracking-wide font-bold text-offwhite px-4"
+      ><span class="italic text-4xl underline decoration-orangered"
+        >Everyone</span
+      > loves SYB Coffee!</span
+    >
+    <Carousel />
+    <span
+      class="text-center block text-2xl tracking-wide font-bold text-offwhite px-4"
+      ><a
+        href="#name"
+        aria-label="book now"
+        class="underline decoration-orangered text-3xl italic">Book now</a
+      > to taste the hype!</span
+    >
+    <div
+      class="flex flex-col items-center gap-10 w-full border-t-4 border-b-4 border-orangered px-4 pt-20 pb-32 relative max-w-screen-lg"
+    >
+      <h3
+        class="text-4xl font-bold text-offwhite tracking-wide underline decoration-orangered"
+      >
+        Need to get in touch?
+      </h3>
+      <Image src={SYB} alt="Sybil the dog" />
+      <span class="text-offwhite text-xl italic"
+        >Reach out to us via email below!</span
+      >
+      <Image
+        src={topLeftArrow}
+        alt=""
+        class="absolute hidden -rotate-6 md:block -left-56 -top-40"
+        quality="low"
+      />
+      <Image
+        src={rightArrow}
+        alt=""
+        class="absolute -rotate-[42deg] hidden md:block -left-32 -bottom-44"
+        quality="low"
+      />
+      <Image
+        src={leftArrow}
+        alt=""
+        class="absolute hidden rotate-[6deg] md:block -right-40 bottom-20"
+        quality="low"
+      />
+      <form
+        class="form-control w-full max-w-lg flex flex-col gap-4 items-stretch md:z-10"
+      >
+        <div class="flex flex-col text-offwhite gap-1">
+          <label for="name" class="text-offwhite pl-1 gap-1">Name:</label>
+        </div>
+        <input id="name" class="input" placeholder="Name" />
+        <div class="flex flex-col gap-1">
+          <label for="emailSubject" class="text-offwhite pl-1">
+            What type of event would you like to get more info about?
+          </label>
+          <select id="emailSubject" class="select select-bordered">
+            {
+              options.map((option) => {
+                return (
+                  <option class="checked:bg-royal checked:text-offwhite p-4">
+                    {option}
+                  </option>
+                );
+              })
+            }
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-offwhite pl-1 gap-1"
+            >Describe your event/request below:</label
+          >
+          <textarea
+            id="emailBody"
+            class="rounded-lg p-4 focus:outline-orangered border-slate w-full"
+            placeholder="Describe your event..."></textarea>
+        </div>
+        <a
+          id="emailSubmitButton"
+          class="self-center w-auto border-4 hover:scale-110 rounded-lg cursor-pointer hover:bg-orangered border-orangered text-offwhite text-2xl font-bold p-4 mt-4"
+          >Contact Us</a
+        >
+      </form>
+    </div>
   </div>
 </section>
 
