@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import coffeeGif from "../assets/images/coffee.webm";
+import coffeeGif from "../assets/images/coffee1.gif";
 import { navItems } from "../consts";
 const { SYB } = Astro.props;
 ---
@@ -9,7 +9,7 @@ const { SYB } = Astro.props;
   <div class="flex flex-col items-center [@media(min-width:380px)]:flex-row [@media(min-width:360px)]:justify-between px-4">
     <div class="inline-flex items-center justify-between">
       <video
-        src={coffeeGif}
+        src={coffeeGif.src}
         muted
         autoplay
         loop
