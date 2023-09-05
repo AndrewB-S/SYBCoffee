@@ -19,30 +19,21 @@ const options = [
   id="Contact"
   class="max-w-full bg-royal py-16 scroll-m-16 flex flex-col items-center"
 >
-  <div class="flex flex-col items-center gap-10 overflow-hidden">
-    <div
-      class="border-4 border-orangered rounded-xl flex flex-col items-center"
+  <div class="flex flex-col items-center gap-4 overflow-hidden">
+    <h2
+      class="text-offwhite drop-shadow-2xl text-5xl underline decoration-orangered font-bold tracking-wide rounded-lg p-4"
     >
-      <h2
-        class="text-offwhite drop-shadow-2xl text-4xl [@media(min-width:404px)]:text-5xl font-bold tracking-wide rounded-lg select-none p-4"
-      >
-        Contact
-      </h2>
-    </div>
+      Contact
+    </h2>
     <span
-      class="text-center block text-3xl tracking-wide font-bold text-offwhite px-4"
-      ><span class="italic text-4xl underline decoration-orangered"
-        >Everyone</span
-      > loves SYB Coffee!</span
+      class="text-center block text-xl tracking-wide font-bold text-offwhite px-4 italic mt-8"
+      >Everyone loves SYB Coffee!</span
     >
     <Carousel />
     <span
-      class="text-center block text-2xl tracking-wide font-bold text-offwhite px-4"
-      ><a
-        href="#name"
-        aria-label="book now"
-        class="underline decoration-orangered text-3xl italic">Book now</a
-      > to taste the hype!</span
+      class="text-center block text-2xl tracking-wide font-bold text-offwhite px-4 italic my-4"
+    >
+      Book now to taste the hype!</span
     >
     <div
       class="flex flex-col items-center gap-10 w-full border-t-4 border-b-4 border-orangered px-4 pt-20 pb-32 relative max-w-screen-lg"
@@ -135,7 +126,7 @@ const handleSubmit = () => {
   if (optionsMap[selectedTitleOption] == undefined) {
     alert("Please select a valid option");
     return;
-  } else if (name == undefined) {
+  } else if (name == undefined || name === "") {
     alert("Please input your preferred contact name");
     return;
   } else {

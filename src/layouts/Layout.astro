@@ -2,6 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import { getImage } from "astro:assets";
 import coffeeBean from "../assets/images/coffee-bean1.png";
+import ogImage from "../assets/images/coffeeImages/renaissance-style-portrait-award-winning-painting-a-white-cup-of-black-coffee-centered-in-frame-406255112-1-.png";
+const optimizedOgImage = await getImage({ src: ogImage, format: "webp" });
 const optimizedCoffeeBean = await getImage({ src: coffeeBean, format: "webp" });
 
 interface Props {
@@ -11,20 +13,34 @@ const { title } = Astro.props;
 import { navItems } from "../consts";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-  <BaseHead title={title}, description="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!" image={optimizedCoffeeBean.src} />
+    <BaseHead
+      title={title}
+      ,
+      description="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!"
+      image={optimizedCoffeeBean.src}
+      ogImage={optimizedOgImage.src}
+    />
   </head>
   <body class="bg-concrete drawer drawer-end">
-    <input id="toggle-menu" type="checkbox" class="drawer-toggle" aria-label="Menu Toggle"/>
+    <input
+      id="toggle-menu"
+      type="checkbox"
+      class="drawer-toggle"
+      aria-label="Menu Toggle"
+    />
     <div class="drawer-content">
       <slot />
     </div>
 
     <div id="drawerMenu" class="drawer-side md:hidden">
-      <label id="drawer-overlay" for="toggle-menu" class="drawer-overlay" aria-hidden="true"
-      />
+      <label
+        id="drawer-overlay"
+        for="toggle-menu"
+        class="drawer-overlay"
+        aria-hidden="true"></label>
       <ul class="menu w-80 h-full bg-royal text-lg pt-16">
         {
           navItems.map((el) => (
@@ -40,21 +56,21 @@ import { navItems } from "../consts";
         }
       </ul>
     </div>
+    <script>
+      const overlay = document.getElementById("drawer-overlay");
+      const menuButton = document.getElementById("toggle-button");
+      const toggleX = () => {
+        menuButton?.classList.toggle("open");
+      };
+      overlay?.addEventListener("click", toggleX);
+      const toggleLabel = document.getElementById("toggle-menu");
+      const menuItems = document.querySelectorAll("a.menu-item");
+      menuItems.forEach((element) => {
+        element.addEventListener("click", () => {
+          toggleX();
+          toggleLabel?.click();
+        });
+      });
+    </script>
   </body>
 </html>
-<script>
-  const overlay = document.getElementById("drawer-overlay");
-  const menuButton = document.getElementById("toggle-button");
-  const toggleX = () => {
-    menuButton?.classList.toggle("open");
-  };
-  overlay?.addEventListener("click", toggleX);
-  const toggleLabel = document.getElementById("toggle-menu");
-  const menuItems = document.querySelectorAll("a.menu-item");
-  menuItems.forEach((element) => {
-    element.addEventListener("click", () => {
-      toggleX();
-      toggleLabel?.click();
-    });
-  });
-</script>
