@@ -29,9 +29,8 @@ export default defineConfig({
             create: false,
             delete: false,
             fields: [
-              {name: "bioTop", widget: "markdown", label: "Top Section of Bio"},
-              {name: "bioBottom", widget: "markdown", label: "Bottom Section of Bio"},
-              {name: "bioSignature", widget: "markdown", label: "Signature at Bottom of Bio"}
+              {name: "title", widget: "string", label: "Bio Section"},
+              {name: "body", widget: "markdown", label: "Text Content for This Section of the Bio"},
             ]
           },
           {
