@@ -23,6 +23,18 @@ export default defineConfig({
         public_folder: "_astro/",
         collections: [
           {
+            name: "bio",
+            label: "Bio",
+            folder: "src/content/bio",
+            create: false,
+            delete: false,
+            fields: [
+              {name: "bioTop", widget: "markdown", label: "Top Section of Bio"},
+              {name: "bioBottom", widget: "markdown", label: "Bottom Section of Bio"},
+              {name: "bioSignature", widget: "markdown", label: "Signature at Bottom of Bio"}
+            ]
+          },
+          {
             name: "drinks",
             label: "Drinks",
             folder: "src/content/drinks",

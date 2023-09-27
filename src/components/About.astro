@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import pictureOfWill from "../assets/images/pictureOfWill.webp";
 import pictureOfSybil from "../assets/images/sybil.webp";
+import * as bioTopSection from "../content/bio/bioTop.md";
+const bioTop = bioTopSection.rawContent();
+import * as bioBottomSection from "../content/bio/bioBottom.md";
+const bioBottom = bioBottomSection.rawContent();
+import * as bioSignatureSection from "../content/bio/bioSignature.md";
+const bioSignature = bioSignatureSection.rawContent();
 ---
 
 <section
@@ -24,31 +30,14 @@ import pictureOfSybil from "../assets/images/sybil.webp";
         <p
           class="text-left first-letter:font-bold indent-4 text-lg first-letter:text-3xl max-w-prose font-serif drop-shadow-sm"
         >
-          Making coffee is an art. I love to make coffee for people, and I love
-          to teach people how to make it. My passion for coffee started in
-          college, while I worked as a barista at several cafes. I knew that
-          quality coffee was something I wanted to share with others. While
-          working as a barista, I graduated from Kennesaw State University with
-          a Culinary, Sustainability, and Hospitality degree. After years of
-          developing techniques at home and sharing them with friends, I opened
-          a mobile coffee catering business. If you want to learn how to make
-          the best cup of coffee at home, I offer lessons. I will personally
-          evaluate your equipment and your coffee, and show you how to get the
-          most out of what you have. I can teach you how to make a great cup of
-          coffee too.
+          {bioTop}
         </p>
         <p
           class="text-left indent-4 text-lg max-w-prose font-serif drop-shadow-sm"
         >
-          We can help you with your events, including weddings, birthdays, and
-          employee appreciation days. We can also help if you want to learn to
-          make a good cup of coffee for yourself and your family. Choose SYB
-          Coffee and we will do our best to help you make lasting memories and
-          fantastic coffee.
+          {bioBottom}
         </p>
-        <span class="italic self-start"
-          >- Will Turner, Owner-Operator of Syb Coffee, LLC</span
-        >
+        <span class="italic self-start">- {bioSignature}</span>
       </div>
     </div>
     <div class="flex flex-col items-center">
