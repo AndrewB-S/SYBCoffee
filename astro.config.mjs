@@ -30,7 +30,7 @@ export default defineConfig({
             delete: false,
             fields: [
               {name: "title", widget: "string", label: "Bio Section"},
-              {name: "body", widget: "markdown", label: "Text Content for This Section of the Bio"},
+              {name: "body", widget: "text", label: "Text Content for This Section of the Bio"},
             ]
           },
           {
