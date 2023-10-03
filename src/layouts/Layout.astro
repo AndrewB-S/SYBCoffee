@@ -3,12 +3,12 @@ import BaseHead from "../components/BaseHead.astro";
 import { getImage } from "astro:assets";
 import coffeeBean from "../assets/images/coffee-bean1.png";
 import ogImage from "../assets/images/willsCartoonDog.webp";
-// const optimizedOgImage = await getImage({
-//   src: ogImage,
-//   format: "webp",
-//   width: 1200,
-//   height: 627,
-// });
+const optimizedOgImage = await getImage({
+  src: ogImage,
+  format: "webp",
+  width: 1200,
+  height: 627,
+});
 const optimizedCoffeeBean = await getImage({ src: coffeeBean, format: "webp" });
 
 interface Props {
@@ -26,7 +26,7 @@ import { navItems } from "../consts";
       ,
       description="Atlanta and Metro Atlanta coffee catering, making delicious espresso and brewed coffee for events. We bring the best coffee in Georgia directly to you!"
       image={optimizedCoffeeBean.src}
-      ogImage={ogImage.src}
+      ogImage={optimizedOgImage.src}
     />
   </head>
   <body class="bg-concrete drawer drawer-end">
